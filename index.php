@@ -14,7 +14,6 @@
     <link href="css/style.css" rel="stylesheet">
 
 </head>
-
   <body>
     <div class="container">
       <div class="row">
@@ -23,9 +22,13 @@
       </div>
     </div>
     <br>
-    <form method="POST" action="new.php">
+    <form method="POST">
     <div id="page-content-wrapper">
       <div class="container">
+        <?php 
+        include('php/new.php');
+        ?>
+        <br>
         <div class="container-fluid">
           <h2>Numero de dossier :</h2>
           <div class="form-check">
@@ -41,6 +44,7 @@
               </label>
           </div>
         </div>
+        <br>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">1 - Déclaration de l'assuré(e)</li>
@@ -254,13 +258,13 @@
         Votre demande de prestation fait suite à :
         <br>
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="false" id="maladie" name="prestation">
+            <input class="form-check-input" type="radio" value="maladie" id="maladie" name="prestation">
             <label class="form-check-label" for="arretCheck">
                 Une maladie
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="false" id="accident" name="prestation">
+            <input class="form-check-input" type="radio" value="accident" id="accident" name="prestation">
             <label class="form-check-label" for="arretCheck">
                 Un accident
             </label>
@@ -422,19 +426,19 @@
             Type d'accident :
             <br>
             <div class="form-check">
-                <input class="form-check-input" type="radio" value="false" id="accident_circulation" name="type_accident">
+                <input class="form-check-input" type="radio" value="circulation" id="accident_circulation" name="type_accident">
                 <label class="form-check-label" for="arretCheck">
                     Accident de la circulation 
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" value="false" id="accident_vie_privee" name="type_accident">
+                <input class="form-check-input" type="radio" value="vie_privee" id="accident_vie_privee" name="type_accident">
                 <label class="form-check-label" for="arretCheck">
                     Accident de vie privée 
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" value="false" id="accident_travail" name="type_accident">
+                <input class="form-check-input" type="radio" value="travail" id="accident_travail" name="type_accident">
                 <label class="form-check-label" for="arretCheck">
                     Accident du travail  
                 </label>
@@ -446,13 +450,13 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" value="false" id="cause_tiers_non" name="cause_tiers">
                 <label class="form-check-label" for="arretCheck">
-                    NON  
+                    Non  
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" value="true" id="cause_tiers_oui" name="cause_tiers">
                 <label class="form-check-label" for="arretCheck">
-                    OUI  
+                    Oui  
                 </label>
             </div>
         </div>
@@ -475,13 +479,13 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" value="false" id="test_alcool_non" name="test_alcool">
                 <label class="form-check-label" for="arretCheck">
-                    NON  
+                    Non  
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" value="true" id="test_alcool_oui" name="test_alcool">
                 <label class="form-check-label" for="arretCheck">
-                    OUI  
+                    Oui  
                 </label>
             </div>
             <br>
@@ -495,19 +499,19 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value="false" id="test_stupefiant_non" name="test_stupefiant">
                     <label class="form-check-label" for="arretCheck">
-                        NON  
+                        Non  
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value="true" id="test_stupefiant_oui" name="test_stupefiant">
                     <label class="form-check-label" for="arretCheck">
-                        OUI  
+                        Oui  
                     </label>
                 </div>
                 <br>
                 Si oui, le résultat était-il :
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="false" id="resultat_stupefiant_positif" name="resultat_stupefiant">
+                    <input class="form-check-input" type="radio" value="true" id="resultat_stupefiant_positif" name="resultat_stupefiant">
                     <label class="form-check-label" for="arretCheck">
                         Positif 
                     </label>
@@ -536,8 +540,8 @@
                 </div>
                 <br> 
                 <div>
-                    <label for="taux_alcool">Références du rapport :</label>
-                    <input type="text" class="form-control"id="taux_alcool" name="taux_alcool">
+                    <label for="rapport_reference">Références du rapport :</label>
+                    <input type="text" class="form-control"id="rapport_reference" name="rapport_reference">
                 </div>
             </div>
             <br>
@@ -558,10 +562,6 @@
                     <input type="text" class="form-control" id="fait_a" name="fait_a">
                 </div>
                 <br>
-                <div class="form-group">
-                    Le  :
-                    <input type="date" class="form-control" id="date_fait_a" name="date_fait_a">
-                </div>
             </div>
         </div>
         <nav aria-label="breadcrumb">
@@ -605,6 +605,14 @@
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="js/script.js"></script>
       </div>
+      <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-bottom">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav"></ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><button type="submit" class="btn btn-primary">Envoyer</button></li>
+            </ul>
+        </div>
+      </nav>
     </form>
   </body>
 </html>
