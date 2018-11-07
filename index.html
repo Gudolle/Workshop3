@@ -159,11 +159,11 @@
                   </div>
               </div>
               <br>
-              <div class="form-control"> 
+              <div> 
                   <label for="autre_profession">Si oui, laquelle ?</label>
-                  <input type="text" id="autre_profession" name="autre_profession">
+                  <input type="text" class="form-control" id="autre_profession" name="autre_profession">
               </div>
-              <div class="form-control">
+              <div>
                   Quelle est votre ancienneté à ce(s) poste(s) de travail ?
                   <br>
                   <input class="form-control" type="number" min="0" max="60" id="anciennete_salary" name="anciennete_salary">
@@ -203,12 +203,12 @@
                     </div>
                 </div>
                 <br>
-                <div class="form-control"> 
+                <div> 
                   <label for="autre_profession_no">Si oui, laquelle ?</label>
-                  <input type="text" id="autre_profession_no" name="autre_profession_no">
+                  <input type="text" class="form-control" id="autre_profession_no" name="autre_profession_no">
                 </div>
                 <br>
-                <div class="form-control">
+                <div>
                     Depuis quand exercez-vous cette(ces) activité(s) ?  
                     <br>
                     <input class="form-control" type="number" min="0" max="60" id="exerce_activite" name="exerce_activite">
@@ -229,15 +229,15 @@
                       </div>
                 </div>
                 <br>
-                <div class="form-control"> 
+                <div>
                     <label for="combien_salary">Si non, combien avez-vous de salariés ?</label>
-                    <input type="number" min="0" id="combien_salary" name="combien_salary"></textarea>
+                    <input type="number" class="form-control"min="0" id="combien_salary" name="combien_salary"></textarea>
                 </div>
-                <div class="form-control">
+                <div>
                     <label for="poste">A quels postes ?</label>
-                    <input type="text"  id="poste" name="poste"></textarea>
+                    <input type="text" class="form-control" id="poste" name="poste"></textarea>
                 </div>
-                <div class="form-control">
+                <div>
                     Dans votre activité professionnelle, quelle est la part (en %) de :
                     <ul class="list-style-type">
                       <li>Travail administratif : <input class="form-control" type="number" min="0" max="100" id="administratif" name="administratif"></li>
@@ -394,9 +394,9 @@
                 Autres ? 
             </label>
         </div>
-        <div class="form-control">
+        <div>
             <label for="quel_autre">Lequel ?</label>
-            <input type="text" id="quel_autre" name="quel_autre">
+            <input type="text" class="form-control" id="quel_autre" name="quel_autre">
         </div>
         <div class="form-group">
             Depuis le  :
@@ -413,9 +413,9 @@
             Date de l'accident :
             <input type="date" class="form-control" id="date_accident_second" name="date_accident_second">
         </div>
-        <div class="form-control">
+        <div>
             <label for="lieu_accident">Lieu de l'accident :</label>
-            <input type="text" id="lieu_accident" name="lieu_accident">
+            <input type="text" class="form-control" id="lieu_accident" name="lieu_accident">
         </div>
         <br>
         <div>
@@ -458,9 +458,9 @@
         </div>
         <br>
         <div>
-            <div class="form-control">
+            <div>
                 <label for="detail_accident">Circonstances détaillées de l'accident :</label>
-                <input type="text" id="detail_accident" name="detail_accident">
+                <input type="text" class="form-control" id="detail_accident" name="detail_accident">
             </div>
         </div>
         <br>
@@ -485,9 +485,9 @@
                 </label>
             </div>
             <br>
-            <div class="form-control">
+            <div>
                 <label for="taux_alcool">Si oui, , quel était votre taux d'alcoolémie (mg/litre d'air expiré ou g/litre de sang) ?</label>
-                <input type="text" id="taux_alcool" name="taux_alcool">
+                <input type="text" class="form-control"id="taux_alcool" name="taux_alcool">
             </div>
             <br>
             <div>
@@ -535,9 +535,9 @@
                     </label>
                 </div>
                 <br> 
-                <div class="form-control">
+                <div>
                     <label for="taux_alcool">Références du rapport :</label>
-                    <input type="text" id="taux_alcool" name="taux_alcool">
+                    <input type="text" class="form-control"id="taux_alcool" name="taux_alcool">
                 </div>
             </div>
             <br>
@@ -553,9 +553,9 @@
             <br>
             <div> 
                 <br>
-                <div class="form-control">
+                <div>
                     <label for="uname">Fait à</label>
-                    <input type="text" id="fait_a" name="fait_a">
+                    <input type="text" class="form-control" id="fait_a" name="fait_a">
                 </div>
                 <br>
                 <div class="form-group">
@@ -582,19 +582,24 @@
             Il existe différents niveaux d'invalidité : <br>
             <h6> Perte Totale et Irréversible d’Autonomie (PTIA) : </h6>  L’Assuré est considéré comme atteint de Perte Totale et Irréversible
                 d’Autonomie s’il est dans l’impossibilité absolue d’exercer une activité quelconque, et dans l’obligation d’avoir recours à
-                l’assistance constante d’une tierce personne pour effectuer les actes ordinaires de la vie.<br>
+                l’assistance constante d’une tierce personne pour effectuer les actes ordinaires de la vie.<br><br>
             <h6> l'Invalidité Permanente totale (IPT) : </h6> L'assuré est déclaré en invalidité permanente totale quand il est reconnu
                 définitivement incapable de se livrer à la moindre activité professionnelle lui procurant gain ou profit, et dont le taux
-                d'incapacité fonctionnelle est égal à 100 % par référence au barème prévu par la législation sur les accidents du travail. <br>
+                d'incapacité fonctionnelle est égal à 100 % par référence au barème prévu par la législation sur les accidents du travail. <br><br>
             <h6> l'Invalidité Permanente Partielle (IPP) : </h6> C'est l'atteinte présumée définitive des capacités physiques ou mentales. Son
                 importance est chiffrée par un taux déterminé par référence au barème prévu par la législation sur les accidents du travail,
-                sans tenir compte de l'incidence professionnelle. <br>
+                sans tenir compte de l'incidence professionnelle. <br><br>
             <h6>l'Invalidité Permanente Partielle >= 66 % (IPP) : </h6> Le taux d'incapacité fonctionnelle par référence au barème prévu par la
-                législation sur les accidents du travail est >= 66 %.<br>
+                législation sur les accidents du travail est >= 66 %.<br><br>
             <h6> l'Invalidité Professionnelle : </h6> Tout état physique ou mental de l'assuré résultant d'un accident ou d'une maladie mettant
                 celui-ci dans l'impossibilité totale permanente et présumée définitive d'exercer la profession indiquée aux conditions
                 particulières et effectivement exercée au titre de profession principale à l'époque de l'événement.<br>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
       </div>
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
