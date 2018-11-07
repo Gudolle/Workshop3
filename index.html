@@ -159,10 +159,9 @@
                   </div>
               </div>
               <br>
-              <div>
-                  Si oui, laquelle ? 
-                  <br>
-                  <input class="form-control" type="text" id="autre_profession" name="autre_profession">
+              <div> 
+                  <label for="autre_profession">Si oui, laquelle ?</label>
+                  <input type="text" id="autre_profession" name="autre_profession">
               </div>
               <div>
                   Quelle est votre ancienneté à ce(s) poste(s) de travail ?
@@ -204,10 +203,9 @@
                     </div>
                 </div>
                 <br>
-                <div>
-                  Si oui, laquelle ? 
-                  <br>
-                  <input class="form-control" type="text" id="autre_profession_no" name="autre_profession_no">
+                <div> 
+                  <label for="autre_profession_no">Si oui, laquelle ?</label>
+                  <input type="text" id="autre_profession_no" name="autre_profession_no">
                 </div>
                 <br>
                 <div>
@@ -231,15 +229,13 @@
                       </div>
                 </div>
                 <br>
-                <div>
-                    Si non, combien avez-vous de salariés ?
-                    <br>
+                <div> 
+                    <label for="combien_salary">Si non, combien avez-vous de salariés ?</label>
                     <input type="number" min="0" id="combien_salary" name="combien_salary"></textarea>
                 </div>
                 <div>
-                    A quels postes ?
-                    <br>
-                    <textarea rows="4" cols="50" id="poste" name="poste"></textarea>
+                    <label for="poste">A quels postes ?</label>
+                    <input type="text"  id="poste" name="poste"></textarea>
                 </div>
                 <div>
                     Dans votre activité professionnelle, quelle est la part (en %) de :
@@ -291,7 +287,7 @@
         </div>
         <br>
         <div class="form-group">
-            Depuis le  :
+            Si oui, depuis le  :
             <input type="date" class="form-control" id="date_rechute" name="date_rechute">
         </div>
         <br>
@@ -311,7 +307,7 @@
         </div>
         <br>
         <div class="form-group">
-            Du  :
+            Si oui, du  :
             <input type="date" class="form-control" id="debut_hospitalise" name="debut_hospitalise">
         </div>
         <br>
@@ -336,7 +332,7 @@
         </div>
         <br>
         <div class="form-group">
-            Depuis le  :
+            Si oui, depuis le  :
             <input type="date" class="form-control" id="date_reprise" name="date_reprise">
         </div>
         <br>
@@ -399,15 +395,14 @@
             </label>
         </div>
         <div>
-            Lequel ?
-            <br>
-            <textarea rows="4" cols="50" id="quel_autre" name="quel_autre"></textarea>
+            <label for="quel_autre">Lequel ?</label>
+            <input type="text" id="quel_autre" name="quel_autre">
         </div>
         <div class="form-group">
             Depuis le  :
             <input type="date" class="form-control" id="date_autre" name="date_autre">
         </div>     
-    </div>
+
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">A remplir en cas d'accident uniquement</li>
@@ -419,9 +414,8 @@
             <input type="date" class="form-control" id="date_accident_second" name="date_accident_second">
         </div>
         <div>
-            Lieu de l'accident :
-            <br>
-            <textarea rows="4" cols="50" id="lieu_accident" name="lieu_accident"></textarea>
+            <label for="lieu_accident">Lieu de l'accident :</label>
+            <input type="text" id="lieu_accident" name="lieu_accident">
         </div>
         <br>
         <div>
@@ -464,10 +458,9 @@
         </div>
         <br>
         <div>
-            Circonstances détaillées de l'accident :
             <div>
-                <br>
-                <textarea rows="4" cols="50" id="detail_accident" name="detail_accident"></textarea>
+                <label for="detail_accident">Circonstances détaillées de l'accident :</label>
+                <input type="text" id="detail_accident" name="detail_accident">
             </div>
         </div>
         <br>
@@ -492,10 +485,9 @@
                 </label>
             </div>
             <br>
-            Si oui, , quel était votre taux d'alcoolémie (mg/litre d'air expiré ou g/litre de sang) ?
             <div>
-                <br>
-                <textarea rows="4" cols="50" id="taux_alcool" name="taux_alcool"></textarea>
+                <label for="taux_alcool">Si oui, , quel était votre taux d'alcoolémie (mg/litre d'air expiré ou g/litre de sang) ?</label>
+                <input type="text" id="taux_alcool" name="taux_alcool">
             </div>
             <br>
             <div>
@@ -533,20 +525,19 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value="false" id="rapport_police_non" name="rapport_police">
                     <label class="form-check-label" for="arretCheck">
-                        NON  
+                        Non
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value="true" id="rapport_police_oui" name="rapport_police">
                     <label class="form-check-label" for="arretCheck">
-                        OUI  
+                        Oui
                     </label>
                 </div>
-                <br>
-                Références du rapport :
+                <br> 
                 <div>
-                    <br>
-                    <textarea rows="4" cols="50" id="taux_alcool" name="taux_alcool"></textarea>
+                    <label for="taux_alcool">Références du rapport :</label>
+                    <input type="text" id="taux_alcool" name="taux_alcool">
                 </div>
             </div>
             <br>
@@ -560,12 +551,11 @@
                 toute information me concernant.
             </div>
             <br>
-            <div>
-                Fait à
+            <div> 
                 <br>
                 <div>
-                    <br>
-                    <textarea rows="4" cols="50" id="fait_a" name="fait_a"></textarea>
+                    <label for="uname">Fait à</label>
+                    <input type="text" id="fait_a" name="fait_a">
                 </div>
                 <br>
                 <div class="form-group">
@@ -576,19 +566,35 @@
         </div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">En cas d'incapacité totale de travail</li>
-          </ol>
-        </nav>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">En cas d'invalidité</li>
-          </ol>
-        </nav>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Lexique</li>
           </ol>
         </nav>
+        <div>
+            <h5>Ces définitions générales sont à titre informatif pour vous aider à remplir ce questionnaire. Seules les
+                définitions figurant dans les conditions générales de votre contrat font foi.</h5>
+                <br>
+            <h6>Incapacité temporaire totale :</h6><br>
+            Etat, physique ou mental, résultant d'un accident ou d'une maladie mettant la personne atteinte dans l'obligation reconnue
+            par les médecins d'interrompre totalement et de façon continue toute activité professionnelle ou, à défaut de l'exercice d'une
+            profession, d'observer un repos complet. 
+            <br>
+            <h6>Invalidité :</h6><br>
+            Il existe différents niveaux d'invalidité : <br>
+            <h6> Perte Totale et Irréversible d’Autonomie (PTIA) : </h6>  L’Assuré est considéré comme atteint de Perte Totale et Irréversible
+                d’Autonomie s’il est dans l’impossibilité absolue d’exercer une activité quelconque, et dans l’obligation d’avoir recours à
+                l’assistance constante d’une tierce personne pour effectuer les actes ordinaires de la vie.<br>
+            <h6> l'Invalidité Permanente totale (IPT) : </h6> L'assuré est déclaré en invalidité permanente totale quand il est reconnu
+                définitivement incapable de se livrer à la moindre activité professionnelle lui procurant gain ou profit, et dont le taux
+                d'incapacité fonctionnelle est égal à 100 % par référence au barème prévu par la législation sur les accidents du travail. <br>
+            <h6> l'Invalidité Permanente Partielle (IPP) : </h6> C'est l'atteinte présumée définitive des capacités physiques ou mentales. Son
+                importance est chiffrée par un taux déterminé par référence au barème prévu par la législation sur les accidents du travail,
+                sans tenir compte de l'incidence professionnelle. <br>
+            <h6>l'Invalidité Permanente Partielle >= 66 % (IPP) : </h6> Le taux d'incapacité fonctionnelle par référence au barème prévu par la
+                législation sur les accidents du travail est >= 66 %.<br>
+            <h6> l'Invalidité Professionnelle : </h6> Tout état physique ou mental de l'assuré résultant d'un accident ou d'une maladie mettant
+                celui-ci dans l'impossibilité totale permanente et présumée définitive d'exercer la profession indiquée aux conditions
+                particulières et effectivement exercée au titre de profession principale à l'époque de l'événement.<br>
+        </div>
       </div>
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
