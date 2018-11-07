@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Formulaire de demande de prestation en incapacité temporaire totale et en invalidité</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2"><img src="img/Axa.png" width="50%"></div>
+        <div class="col-sm-10 title">DEMANDE DE PRESTATION EN INCAPACITÉ TEMPORAIRE TOTALE ET EN INVALIDITÉ</div>
+      </div>
+    </div>
+    <br>
+    <form method="POST" action="new.php">
+    <div id="page-content-wrapper">
+      <div class="container">
+        <div class="container-fluid">
+          <h2>Numero de dossier :</h2>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" value="false" id="arret_travail" name="type_contrat">
+              <label class="form-check-label" for="arretCheck">
+                  Arrêt de travail initial
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" value="false" id="invalidité" name="type_contrat">
+              <label class="form-check-label" for="invaliditéCheck">
+                  Invalidité
+              </label>
+          </div>
+        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">1 - Déclaration de l'assuré(e)</li>
+          </ol>
+        </nav>
+        <p>Je soussigné(e)</p>
+        <div class="form-group">
+          Nom :
+          <input type="text" id="nom" name="nom" class="form-control">
+          Prenom :
+          <input type="text" id="prenom" name="prenom" class="form-control">
+        </div>
+        <br>
+        <div class="form-group">
+          N° de téléphone fixe :
+          <input type="text" class="form-control" data-country="FR" id="tel_f" name="tel_f">
+          N° de téléphone portable :
+          <input type="text" class="form-control" data-country="FR" id="tel_p" name="tel_p">
+        </div>
+        <br>
+        <div class="form-group">
+          Date de naissance :
+          <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Date of Birth">
+        </div>
+        <div class="form-group">
+          Adresse :
+          <input type="text" id="adresse" name="adresse" class="form-control">
+        </div>
+        <br>
+        <div class="form-group">
+          Code Postal :
+          <input type="text" id="cp" name="cp" class="form-control">
+          Ville (Bureau distributeur) :
+          <input type="text" id="ville" name="ville" class="form-control">
+        </div>
+        <br>
+        <div class="form-group">
+          Numero de contrat :
+          <input type="text" name="numero_contrat" id="numero_contrat" class="form-control">
+          e-mail :
+          <input type="text" name="email" id="email" placeholder="nom@example.com" class="form-control">
+        </div>
+        <hr class="style1">
+        <div class="form-group">
+          <label for="select_pro">Quelle est votre profession : </label>
+          <select class="form-control" id="select_pro" name="select_pro">
+            <option>Profession1</option>
+            <option>Profession2</option>
+            <option>Profession3</option>
+          </select>
+        </div>
+      <br>
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="true" id="salary" name="salary">
+                  <label class="form-check-label" for="arretCheck">
+                      Si vous êtes salarié
+                  </label>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="no_salary" name="salary">
+                    <label class="form-check-label" for="arretCheck">
+                        Si vous êtes travailleur non salarié
+                    </label>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="CDI" id="cdi" name="choix_cd">
+                <label class="form-check-label" for="arretCheck">
+                    CDI
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="CDD" id="cdd" name="choix_cd">
+                <label class="form-check-label" for="arretCheck">
+                    CDD
+                </label>
+              </div>
+              <br>
+              Exercez-vous votre profession à :
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="complet" id="temps_complet" name="temps_salary">
+                <label class="form-check-label" for="arretCheck">
+                    Temps_complet
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="partiel" id="temps_partiel" name="temps_salary">
+                <label class="form-check-label" for="arretCheck">
+                    Temps_partiel
+                </label>
+              </div>
+              <br>
+              <div>
+                Si temps partiel, avez-vous une autre profession ? 
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="true" id="autre_profession_oui" name="autre_profession_choix">
+                    <label class="form-check-label" for="arretCheck">
+                        Oui
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id=autre_profession_non name="autre_profession_choix">
+                    <label class="form-check-label" for="arretCheck">
+                        Non
+                    </label>
+                  </div>
+              </div>
+              <br>
+              <div>
+                  Si oui, laquelle ? 
+                  <br>
+                  <input class="form-control" type="text" id="autre_profession" name="autre_profession">
+              </div>
+              <div>
+                  Quelle est votre ancienneté à ce(s) poste(s) de travail ?
+                  <br>
+                  <input class="form-control" type="number" min="0" max="60" id="anciennete_salary" name="anciennete_salary">
+              </div>
+            </td>
+            <td>
+              <div></div>
+              <div>
+                  Exercez-vous votre profession à :
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="temps_complet_no_salary" name="temps_non_salary">
+                    <label class="form-check-label" for="arretCheck">
+                        Temps_complet
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="temps_partiel_no_salary" name="temps_non_salary">
+                    <label class="form-check-label" for="arretCheck">
+                        Temps_partiel
+                    </label>
+                  </div>
+                  <br>
+              </div>
+              <div>
+                  Si temps partiel, avez-vous une autre profession ? 
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" value="false" id="autre_profession_oui_no" name="autre_profession_choix_no">
+                      <label class="form-check-label" for="arretCheck">
+                          Oui
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" value="false" id="autre_profession_non_no" name="autre_profession_choix_no">
+                      <label class="form-check-label" for="arretCheck">
+                          Non
+                      </label>
+                    </div>
+                </div>
+                <br>
+                <div>
+                  Si oui, laquelle ? 
+                  <br>
+                  <input class="form-control" type="text" id="autre_profession_no" name="autre_profession_no">
+                </div>
+                <br>
+                <div>
+                    Depuis quand exercez-vous cette(ces) activité(s) ?  
+                    <br>
+                    <input class="form-control" type="number" min="0" max="60" id="exerce_activite" name="exerce_activite">
+                </div>
+                <div>
+                    Travaillez-vous seul ?
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="false" id="seul_oui" name="seul">
+                        <label class="form-check-label" for="arretCheck">
+                            Oui
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="false" id="seul_non" name="seul">
+                        <label class="form-check-label" for="arretCheck">
+                            Non
+                        </label>
+                      </div>
+                </div>
+                <br>
+                <div>
+                    Si non, combien avez-vous de salariés ?
+                    <br>
+                    <input type="number" min="0" id="combien_salary" name="combien_salary"></textarea>
+                </div>
+                <div>
+                    A quels postes ?
+                    <br>
+                    <textarea rows="4" cols="50" id="poste" name="poste"></textarea>
+                </div>
+                <div>
+                    Dans votre activité professionnelle, quelle est la part (en %) de :
+                    <ul class="list-style-type">
+                      <li>Travail administratif : <input class="form-control" type="number" min="0" max="100" id="administratif" name="administratif"></li>
+                      <li>Travail manuel : <input class="form-control" type="number" min="0" max="100" id="manuel" name="manuel"></li>
+                      <li>Déplacement : <input class="form-control" type="number" min="0" max="100" id="deplacement" name="deplacement"></li>
+                    </ul>
+                </div>
+            </td>
+          </tbody>
+        </table>
+        <br>
+        <hr class="style1">
+        <br>
+        Votre demande de prestation fait suite à :
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="maladie" name="prestation">
+            <label class="form-check-label" for="arretCheck">
+                Une maladie
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="accident" name="prestation">
+            <label class="form-check-label" for="arretCheck">
+                Un accident
+            </label>
+        </div>
+        <br>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_accident" name="date_accident">
+        </div>
+        <br>
+        S'agit-il d'une rechute ?  :
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="rechute_non" name="rechute">
+            <label class="form-check-label" for="arretCheck">
+                Non
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="rechute_oui" name="rechute">
+            <label class="form-check-label" for="arretCheck">
+                Oui
+            </label>
+        </div>
+        <br>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_rechute" name="date_rechute">
+        </div>
+        <br>
+        Avez-vous été hospitalisé(e) ?
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="hospitalise_non" name="hospitalise">
+            <label class="form-check-label" for="arretCheck">
+                Non
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="hospitalise_oui" name="hospitalise">
+            <label class="form-check-label" for="arretCheck">
+                Oui
+            </label>
+        </div>
+        <br>
+        <div class="form-group">
+            Du  :
+            <input type="date" class="form-control" id="debut_hospitalise" name="debut_hospitalise">
+        </div>
+        <br>
+        <div class="form-group">
+            Au  :
+            <input type="date" class="form-control" id="fin_hospitalise" name="fin_hospitalise">
+        </div>
+        <br>
+        Avez-vous repris le travail ?
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="reprise_non" name="reprise">
+            <label class="form-check-label" for="arretCheck">
+                Non
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="reprise_oui" name="reprise">
+            <label class="form-check-label" for="arretCheck">
+                Oui
+            </label>
+        </div>
+        <br>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_reprise" name="date_reprise">
+        </div>
+        <br>
+        Avez-vous souscrit d'autres contrats de prévoyance auprès d'AXA et/ou d'une autre compagnie ?
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="souscrit_non" name="souscrit">
+            <label class="form-check-label" for="arretCheck">
+                Non
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="false" id="souscrit_oui" name="souscrit">
+            <label class="form-check-label" for="arretCheck">
+                Oui
+            </label>
+        </div>
+        <br>
+        <hr class="style1">
+        <br>
+        
+    </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">A remplir en cas d'accident uniquement</li>
+          </ol>
+        </nav>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">A remplir en cas d'accident de la circulation uniquement</li>
+          </ol>
+        </nav>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">2 - Attestation médical à compléter par le medecin  traitant</li>
+          </ol>
+        </nav>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">En cas d'incapacité totale de travail</li>
+          </ol>
+        </nav>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">En cas d'invalidité</li>
+          </ol>
+        </nav>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Lexique</li>
+          </ol>
+        </nav>
+      </div>
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="js/script.js"></script>
+      </div>
+    </form>
+  </body>
+</html>
