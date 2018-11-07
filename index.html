@@ -191,7 +191,7 @@
               <div>
                   Si temps partiel, avez-vous une autre profession ? 
                   <div class="form-check">
-                      <input class="form-check-input" type="radio" value="false" id="autre_profession_oui_no" name="autre_profession_choix_no">
+                      <input class="form-check-input" type="radio" value="true" id="autre_profession_oui_no" name="autre_profession_choix_no">
                       <label class="form-check-label" for="arretCheck">
                           Oui
                       </label>
@@ -218,7 +218,7 @@
                 <div>
                     Travaillez-vous seul ?
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" value="false" id="seul_oui" name="seul">
+                        <input class="form-check-input" type="radio" value="true" id="seul_oui" name="seul">
                         <label class="form-check-label" for="arretCheck">
                             Oui
                         </label>
@@ -284,7 +284,7 @@
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="false" id="rechute_oui" name="rechute">
+            <input class="form-check-input" type="radio" value="true" id="rechute_oui" name="rechute">
             <label class="form-check-label" for="arretCheck">
                 Oui
             </label>
@@ -304,7 +304,7 @@
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="false" id="hospitalise_oui" name="hospitalise">
+            <input class="form-check-input" type="radio" value="true" id="hospitalise_oui" name="hospitalise">
             <label class="form-check-label" for="arretCheck">
                 Oui
             </label>
@@ -329,7 +329,7 @@
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="false" id="reprise_oui" name="reprise">
+            <input class="form-check-input" type="radio" value="true" id="reprise_oui" name="reprise">
             <label class="form-check-label" for="arretCheck">
                 Oui
             </label>
@@ -349,7 +349,7 @@
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="false" id="souscrit_oui" name="souscrit">
+            <input class="form-check-input" type="radio" value="true" id="souscrit_oui" name="souscrit">
             <label class="form-check-label" for="arretCheck">
                 Oui
             </label>
@@ -357,23 +357,223 @@
         <br>
         <hr class="style1">
         <br>
-        
+        Etes-vous affilié(e) : 
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="false" id="secu_social" name="secu_social">
+            <label class="form-check-label" for="arretCheck">
+                A la Sécurité sociale ? 
+            </label>
+        </div>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_reprise" name="date_secu">
+        </div>
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="false" id="rsi" name="rsi">
+            <label class="form-check-label" for="arretCheck">
+                Au RSI ? 
+            </label>
+        </div>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_rsi" name="date_rsi">
+        </div>
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="false" id="msa" name="msa">
+            <label class="form-check-label" for="arretCheck">
+                A la MSA ? 
+            </label>
+        </div>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_msa" name="date_msa">
+        </div>
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="false" id="autre" name="autre">
+            <label class="form-check-label" for="arretCheck">
+                Autres ? 
+            </label>
+        </div>
+        <div>
+            Lequel ?
+            <br>
+            <textarea rows="4" cols="50" id="quel_autre" name="quel_autre"></textarea>
+        </div>
+        <div class="form-group">
+            Depuis le  :
+            <input type="date" class="form-control" id="date_autre" name="date_autre">
+        </div>     
     </div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">A remplir en cas d'accident uniquement</li>
           </ol>
         </nav>
+        <br>
+        <div class="form-group">
+            Date de l'accident :
+            <input type="date" class="form-control" id="date_accident_second" name="date_accident_second">
+        </div>
+        <div>
+            Lieu de l'accident :
+            <br>
+            <textarea rows="4" cols="50" id="lieu_accident" name="lieu_accident"></textarea>
+        </div>
+        <br>
+        <div>
+            Type d'accident :
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="false" id="accident_circulation" name="type_accident">
+                <label class="form-check-label" for="arretCheck">
+                    Accident de la circulation 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="false" id="accident_vie_privee" name="type_accident">
+                <label class="form-check-label" for="arretCheck">
+                    Accident de vie privée 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="false" id="accident_travail" name="type_accident">
+                <label class="form-check-label" for="arretCheck">
+                    Accident du travail  
+                </label>
+            </div>
+        </div>
+        <br>
+        <div>
+            L'accident a-t-il été causé par un tiers ? 
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="false" id="cause_tiers_non" name="cause_tiers">
+                <label class="form-check-label" for="arretCheck">
+                    NON  
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="true" id="cause_tiers_oui" name="cause_tiers">
+                <label class="form-check-label" for="arretCheck">
+                    OUI  
+                </label>
+            </div>
+        </div>
+        <br>
+        <div>
+            Circonstances détaillées de l'accident :
+            <div>
+                <br>
+                <textarea rows="4" cols="50" id="detail_accident" name="detail_accident"></textarea>
+            </div>
+        </div>
+        <br>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">A remplir en cas d'accident de la circulation uniquement</li>
           </ol>
         </nav>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">2 - Attestation médical à compléter par le medecin  traitant</li>
-          </ol>
-        </nav>
+        <br>
+        <div>
+            Avez-vous été soumis à un test d'alcoolémie ?
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="false" id="test_alcool_non" name="test_alcool">
+                <label class="form-check-label" for="arretCheck">
+                    NON  
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="true" id="test_alcool_oui" name="test_alcool">
+                <label class="form-check-label" for="arretCheck">
+                    OUI  
+                </label>
+            </div>
+            <br>
+            Si oui, , quel était votre taux d'alcoolémie (mg/litre d'air expiré ou g/litre de sang) ?
+            <div>
+                <br>
+                <textarea rows="4" cols="50" id="taux_alcool" name="taux_alcool"></textarea>
+            </div>
+            <br>
+            <div>
+                Avez-vous été soumis à un dépistage de stupéfiants ?
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="test_stupefiant_non" name="test_stupefiant">
+                    <label class="form-check-label" for="arretCheck">
+                        NON  
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="true" id="test_stupefiant_oui" name="test_stupefiant">
+                    <label class="form-check-label" for="arretCheck">
+                        OUI  
+                    </label>
+                </div>
+                <br>
+                Si oui, le résultat était-il :
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="resultat_stupefiant_positif" name="resultat_stupefiant">
+                    <label class="form-check-label" for="arretCheck">
+                        Positif 
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="resultat_stupefiant_negatif" name="resultat_stupefiant">
+                    <label class="form-check-label" for="arretCheck">
+                        Négatif  
+                    </label>
+                </div>
+            </div>
+            <br>
+            <div>
+                Un rapport de police ou de gendarmerie a-t-il été établi ?
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" id="rapport_police_non" name="rapport_police">
+                    <label class="form-check-label" for="arretCheck">
+                        NON  
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="true" id="rapport_police_oui" name="rapport_police">
+                    <label class="form-check-label" for="arretCheck">
+                        OUI  
+                    </label>
+                </div>
+                <br>
+                Références du rapport :
+                <div>
+                    <br>
+                    <textarea rows="4" cols="50" id="taux_alcool" name="taux_alcool"></textarea>
+                </div>
+            </div>
+            <br>
+            <div>
+                Je reconnais être informé(e) que les réponses aux questions posées sont obligatoires pour le traitement de mon dossier.
+                J'autorise mon assureur à collecter et à traiter les informations de santé figurant dans ce questionnaire dans le but de régler les prestations qui me
+                sont dues.
+                Je déclare être informé(e) que les réponses et informations contenues dans le présent document sont destinées au médecin conseil du service médical
+                de l'assureur ainsi qu’éventuellement, au médecin du réassureur de ce dernier.
+                Je dispose d'un droit d'accès et de rectification auprès d'AXA - Service Information Clients - 313 Terrasses de l'Arche 92727 - NANTERRE Cedex - pour
+                toute information me concernant.
+            </div>
+            <br>
+            <div>
+                Fait à
+                <br>
+                <div>
+                    <br>
+                    <textarea rows="4" cols="50" id="fait_a" name="fait_a"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    Le  :
+                    <input type="date" class="form-control" id="date_fait_a" name="date_fait_a">
+                </div>
+            </div>
+        </div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">En cas d'incapacité totale de travail</li>
