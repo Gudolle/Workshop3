@@ -3,70 +3,70 @@ $url = "http://localhost:3001";
 $db = mysqli_connect('localhost','root', '');
 mysqli_select_db($db, 'workshopi4axa');
 $nameErr = [];
-$type_contrat;
-$nom;
-$prenom;
-$tel_f;
-$tel_p;
-$birthdate;
-$adresse;
-$cp;
-$ville;
-$numero_contrat;
-$email;
-$select_pro;
+$type_contrat ='null';
+$nom='null';
+$prenom='null';
+$tel_f='null';
+$tel_p='null';
+$birthdate='null';
+$adresse='null';
+$cp='null';
+$ville='null';
+$numero_contrat='null';
+$email='null';
+$select_pro='null';
 
-$salary;
+$salary='null';
 
-$choix_cd;
-$temps_salary;
-$autre_profession;
-$anciennete_salary;
+$choix_cd='null';
+$temps_salary='null';
+$autre_profession='null';
+$anciennete_salary='null';
 
-$temps_non_salary;
-$exerce_activite;
-$seul;
-$combien_salary;
-$poste;
-$administratif;
-$manuel;
-$deplacement;
+$temps_non_salary='null';
+$exerce_activite='null';
+$seul='null';
+$combien_salary='null';
+$poste='null';
+$administratif='null';
+$manuel='null';
+$deplacement='null';
 
-$prestation;
-$date_accident;
-$rechute;
-$date_rechute;
-$hospitalise;
-$debut_hospitalise;
-$fin_hospitalise;
-$reprise;
-$date_reprise;
-$souscrit;
+$prestation='null';
+$date_accident='null';
+$rechute='null';
+$date_rechute='null';
+$hospitalise='null';
+$debut_hospitalise='null';
+$fin_hospitalise='null';
+$reprise='null';
+$date_reprise='null';
+$souscrit='null';
 
-$secu_sociale;
-$date_secu;
-$rsi;
-$date_rsi;
-$msa;
-$date_msa;
-$autre_affiliation;
-$quel_autre_affiliation;
-$date_autre_affiliation;
+$secu_sociale='null';
+$date_secu='null';
+$rsi='null';
+$date_rsi='null';
+$msa='null';
+$date_msa='null';
+$autre_affiliation='null';
+$quel_autre_affiliation='null';
+$date_autre_affiliation='null';
 
-$date_accident_second;
-$lieu_accident;
-$type_accident;
-$cause_tiers;
-$detail_accident;
+$date_accident_second='null';
+$lieu_accident='null';
+$type_accident='null';
+$cause_tiers='null';
+$detail_accident='null';
 
-$test_alcool;
-$taux_alcool;
-$test_stupefiant;
-$resultat_stupefiant;
-$rapport_police;
-$rapport_reference;
+$test_alcool='null';
+$taux_alcool='null';
+$test_stupefiant='null';
+$resultat_stupefiant='null';
+$rapport_police='null';
+$rapport_reference='null';
 
-$fait_a;
+$fait_a='null';
 $date_fait_a = date("Y-m-d H:i:s");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -98,37 +98,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["birthdate"])) {
         array_push($nameErr,"La date de naissance est obligatoire.");
     }else{
-        $type_contrat = check($_POST["birthdate"],$db);
+        $birthdate = check($_POST["birthdate"],$db);
     }
     if (empty($_POST["adresse"])) {
         array_push($nameErr,"L'adresse est obligatoire.");
     }else{
-        $type_contrat = check($_POST["adresse"],$db);
+        $adresse = check($_POST["adresse"],$db);
     }
     if (empty($_POST["cp"])) {
         array_push($nameErr,"Le code postal est obligatoire.");
     }else{
-        $type_contrat = check($_POST["cp"],$db);
+        $cp = check($_POST["cp"],$db);
     }
     if (empty($_POST["ville"])) {
         array_push($nameErr,"La ville est obligatoire.");
     }else{
-        $type_contrat = check($_POST["ville"],$db);
+        $ville = check($_POST["ville"],$db);
     }
     if (empty($_POST["numero_contrat"])) {
         array_push($nameErr,"Le numero de contrat est obligatoire.");
     }else{
-        $type_contrat = check($_POST["numero_contrat"],$db);
+        $numero_contrat = check($_POST["numero_contrat"],$db);
     }
     if (empty($_POST["email"])) {
         array_push($nameErr,"L'e-mail est obligatoire.");
     }else{
-        $type_contrat = check($_POST["email"],$db);
+        $email = check($_POST["email"],$db);
     }
     if (empty($_POST["select_pro"])) {
         array_push($nameErr,"La profession est obligatoire.");
     }else{
-        $type_contrat = check($_POST["select_pro"],$db);
+        $select_pro = check($_POST["select_pro"],$db);
     }
     //salary
     if (empty($_POST["salary"])) {
@@ -388,7 +388,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     //check if error
     if(count($nameErr)==0){
-        add_contrat();
+        add_contrat($url,$db,$type_contrat,$nom,$prenom,$tel_f,$tel_p,$birthdate,$adresse,$cp,$ville,$numero_contrat,$email,$select_pro,$salary,$choix_cd,$temps_salary,$autre_profession,$anciennete_salary,$temps_non_salary,$exerce_activite,$seul,$combien_salary,$poste,$administratif,$manuel,$deplacement,$prestation,$date_accident,$rechute,$date_rechute,$hospitalise,$debut_hospitalise,$fin_hospitalise,$reprise,$date_reprise,$souscrit,$secu_sociale,$date_secu,$rsi,$date_rsi,$msa,$date_msa,$autre_affiliation,$quel_autre_affiliation,$date_autre_affiliation,$date_accident_second,$lieu_accident,$type_accident,$cause_tiers,$detail_accident,$test_alcool,$taux_alcool,$test_stupefiant,$resultat_stupefiant,$rapport_police,$rapport_reference,$fait_a,$date_fait_a);
     }else{
         some_error($nameErr);
     }
@@ -411,41 +411,44 @@ function some_error($nameErr){
     }
     print('</div>');
 }
-function add_contrat($db,$type_contrat,$nom,$prenom,$tel_f,$tel_p,$birthdate,$adresse,$cp,$ville,$numero_contrat,$email,$select_pro,$salary,$choix_cd,$temps_salary,$autre_profession,$anciennete_salary,$temps_non_salary,$exerce_activite,$seul,$combien_salary,$poste,$administratif,$manuel,$deplacement,$prestation,$date_accident,$rechute,$date_rechute,$hospitalise,$debut_hospitalise,$fin_hospitalise,$reprise,$date_reprise,$souscrit,$secu_sociale,$date_secu,$rsi,$date_rsi,$msa,$date_msa,$autre_affiliation,$quel_autre_affiliation,$date_autre_affiliation,$date_accident_second,$lieu_accident,$type_accident,$cause_tiers,$detail_accident,$test_alcool,$taux_alcool,$test_stupefiant,$resultat_stupefiant,$rapport_police,$rapport_reference,$fait_a,$date_fait_a){
+function add_contrat($url,$db,$type_contrat,$nom,$prenom,$tel_f,$tel_p,$birthdate,$adresse,$cp,$ville,$numero_contrat,$email,$select_pro,$salary,$choix_cd,$temps_salary,$autre_profession,$anciennete_salary,$temps_non_salary,$exerce_activite,$seul,$combien_salary,$poste,$administratif,$manuel,$deplacement,$prestation,$date_accident,$rechute,$date_rechute,$hospitalise,$debut_hospitalise,$fin_hospitalise,$reprise,$date_reprise,$souscrit,$secu_sociale,$date_secu,$rsi,$date_rsi,$msa,$date_msa,$autre_affiliation,$quel_autre_affiliation,$date_autre_affiliation,$date_accident_second,$lieu_accident,$type_accident,$cause_tiers,$detail_accident,$test_alcool,$taux_alcool,$test_stupefiant,$resultat_stupefiant,$rapport_police,$rapport_reference,$fait_a,$date_fait_a){
     $sql="insert into adresse(adresse_1, CodePostal, Ville) values ('$adresse', '$cp', '$ville');";
     mysqli_query($db,$sql);    
 
-    $sql="select ID from adresse where adresse_1 = '$adresse' and codepostal = '$cp' and ville = $ville'";
-    $AdresseID = mysqli_query($db,$sql); 
+    $sql="select ID from adresse where Adresse_1 = '$adresse' and CodePostal = '$cp' and Ville = '$ville'";
+    $AdresseID = mysqli_fetch_array(mysqli_query($db,$sql))[0];
 
     $sql="insert into Personne(Nom, Prenom, Tel_Por, Tel_Fix, DateDeNaissance, Email, contrat, Adresse_ID) values ('$nom', '$prenom', '$tel_p', '$tel_f', '$birthdate', '$email', '$numero_contrat', $AdresseID);";
     mysqli_query($db,$sql);
 
     $sql="select ID from Personne where Nom = '$nom' and Prenom = '$prenom' and contrat = '$numero_contrat'";
-    $PersonneID = mysqli_query($db,$sql);
+    $PersonneID = mysqli_fetch_array(mysqli_query($db,$sql))[0];
 
     $sql="insert into Proffession(TypeID, isSalarie, isCDI, isTempPlein, TempsPartielDesc, Anciennete, isSeul, Nombre, PartAdministratif, PartDeplacement, Partmanuel, PersonneID) values ($select_pro,'$salary','$choix_cd', $temps_salary, '$autre_profession', $anciennete_salary, '$seul', $combien_salary, $administratif, $deplacement, $manuel, $PersonneID);";
     mysqli_query($db,$sql);
 
-    $sql="insert into Prestation(isMalade, DateDebut, isRechute, DateChut, isHospital, DateStartHopital, DateFinHopital, isReprisBoulot, DateRepise, AutreContrat, PersonneID) values ('$prestation', $date_accident, '$rechute', $date_rechute, '$hospitalise', $debut_hospitalise, $fin_hospitalise, '$reprise', $date_reprise, '$souscrit', $PersonneID);";
+    $sql="insert into Prestation(isMalade, DateDebut, isRechute, DateChut, isHospital, DateStartHopital, DateFinHopital, isReprisBoulot, DateRepise, AutreContrat, PersonneID) values ('$prestation', '$date_accident', '$rechute', '$date_rechute', '$hospitalise', '$debut_hospitalise', '$fin_hospitalise', '$reprise', '$date_reprise', '$souscrit', $PersonneID);";
+    mysqli_query($db,$sql);
+    
+    $sql="insert into affilation(DateSecu, DateRsi, DateMsa, Autre, DateAutre, Personneid) VALUES ('$date_secu', '$date_rsi', '$date_msa', '$quel_autre_affiliation', '$date_autre_affiliation', $PersonneID);";
     mysqli_query($db,$sql);
 
-    $sql="insert into affilation(DateSecu, DateRsi, DateMsa, Autre, DateAutre, Personneid) VALUES ($date_secu, $date_rsi, $date_msa, '$quel_autre_affiliation', $date_autre_affiliation, $PersonneID);";
-    mysqli_query($db,$sql);
-
-    $sql="insert into Accident(DateAcc, LieuAcc, isCauseTiers, circonstances, TypeID, PersonneID) VALUES ($date_accident_second, '$lieu_accident', '$cause_tiers', '$detail_accident', $cause_tiers, $PersonneID);";
-    mysqli_query($db,$sql);
-
-    $sql="select ID from Accident where DateAcc = $date_accident_second and LieuAcc = '$lieu_accident' and isCauseTiers = '$detail_accident';";
-    $AccidentID = mysqli_query($db,$sql);
-
-    $sql="insert into AccidentCircu(isTestAlcool, isTauxAlcool, isDepiStup, isPositifStup, isRapportPolice, RefRapport, AccidentID) VALUES ('$test_alcool',$taux_alcool,'$test_stupefiant','$resultat_stupefiant', '$rapport_police', '$rapport_references', $AccidentID);";
-    mysqli_query($db,$sql);
-
+    if($prestation=="accident"){
+        $sql="insert into Accident(DateAcc, LieuAcc, isCauseTiers, circonstances, TypeID, PersonneID) VALUES ('$date_accident_second', '$lieu_accident', '$cause_tiers', '$detail_accident', $cause_tiers, $PersonneID);";
+        mysqli_query($db,$sql);
+        if($type_accident=="circulation"){
+            $sql="select ID from Accident where DateAcc = '$date_accident_second' and LieuAcc = '$lieu_accident' and isCauseTiers = '$detail_accident';";
+            $AccidentID = mysqli_fetch_array(mysqli_query($db,$sql))[0];
+            
+            $sql="insert into AccidentCircu(isTestAlcool, isTauxAlcool, isDepiStup, isPositifStup, isRapportPolice, RefRapport, AccidentID) VALUES ('$test_alcool',$taux_alcool,'$test_stupefiant','$resultat_stupefiant', '$rapport_police', '$rapport_reference', $AccidentID);";
+            mysqli_query($db,$sql);
+        }
+    }
 
     $sql="select MAX(ID) from Prestation where PersonneID = $PersonneID;";
-    $PrestationID = mysqli_query($db,$sql);
+    $PrestationID = mysqli_fetch_array(mysqli_query($db,$sql))[0];
 
     add_block($url,$PrestationID,"new","prestation incapacité");
+    print('<div class="alert alert-success"><strong>Succès</strong> Votre formulaire est valider et sauvegarder.</div>');
 }
 ?>
