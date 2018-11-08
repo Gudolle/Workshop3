@@ -1,0 +1,7 @@
+introduction - sebastien
+interface - meihdi
+naivechain - steven
+use case - yann
+reseau - pierre
+bdd - antoine
+conclusion - sebastien
