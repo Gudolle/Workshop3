@@ -1,4 +1,5 @@
 <?php
+$url = "http://localhost:3001";
 $db = mysqli_connect('localhost','root', '');
 mysqli_select_db($db, 'workshopi4axa');
 $nameErr = [];
@@ -410,7 +411,41 @@ function some_error($nameErr){
     }
     print('</div>');
 }
-function add_contrat(){
+function add_contrat($db,$type_contrat,$nom,$prenom,$tel_f,$tel_p,$birthdate,$adresse,$cp,$ville,$numero_contrat,$email,$select_pro,$salary,$choix_cd,$temps_salary,$autre_profession,$anciennete_salary,$temps_non_salary,$exerce_activite,$seul,$combien_salary,$poste,$administratif,$manuel,$deplacement,$prestation,$date_accident,$rechute,$date_rechute,$hospitalise,$debut_hospitalise,$fin_hospitalise,$reprise,$date_reprise,$souscrit,$secu_sociale,$date_secu,$rsi,$date_rsi,$msa,$date_msa,$autre_affiliation,$quel_autre_affiliation,$date_autre_affiliation,$date_accident_second,$lieu_accident,$type_accident,$cause_tiers,$detail_accident,$test_alcool,$taux_alcool,$test_stupefiant,$resultat_stupefiant,$rapport_police,$rapport_reference,$fait_a,$date_fait_a){
+    $sql="insert into adresse(adresse_1, CodePostal, Ville) values ('$adresse', '$cp', '$ville');";
+    mysqli_query($db,$sql);    
 
+    $sql="select ID from adresse where adresse_1 = '$adresse' and codepostal = '$cp' and ville = $ville'";
+    $AdresseID = mysqli_query($db,$sql); 
+
+    $sql="insert into Personne(Nom, Prenom, Tel_Por, Tel_Fix, DateDeNaissance, Email, contrat, Adresse_ID) values ('$nom', '$prenom', '$tel_p', '$tel_f', '$birthdate', '$email', '$numero_contrat', $AdresseID);";
+    mysqli_query($db,$sql);
+
+    $sql="select ID from Personne where Nom = '$nom' and Prenom = '$prenom' and contrat = '$numero_contrat'";
+    $PersonneID = mysqli_query($db,$sql);
+
+    $sql="insert into Proffession(TypeID, isSalarie, isCDI, isTempPlein, TempsPartielDesc, Anciennete, isSeul, Nombre, PartAdministratif, PartDeplacement, Partmanuel, PersonneID) values ($select_pro,'$salary','$choix_cd', $temps_salary, '$autre_profession', $anciennete_salary, '$seul', $combien_salary, $administratif, $deplacement, $manuel, $PersonneID);";
+    mysqli_query($db,$sql);
+
+    $sql="insert into Prestation(isMalade, DateDebut, isRechute, DateChut, isHospital, DateStartHopital, DateFinHopital, isReprisBoulot, DateRepise, AutreContrat, PersonneID) values ('$prestation', $date_accident, '$rechute', $date_rechute, '$hospitalise', $debut_hospitalise, $fin_hospitalise, '$reprise', $date_reprise, '$souscrit', $PersonneID);";
+    mysqli_query($db,$sql);
+
+    $sql="insert into affilation(DateSecu, DateRsi, DateMsa, Autre, DateAutre, Personneid) VALUES ($date_secu, $date_rsi, $date_msa, '$quel_autre_affiliation', $date_autre_affiliation, $PersonneID);";
+    mysqli_query($db,$sql);
+
+    $sql="insert into Accident(DateAcc, LieuAcc, isCauseTiers, circonstances, TypeID, PersonneID) VALUES ($date_accident_second, '$lieu_accident', '$cause_tiers', '$detail_accident', $cause_tiers, $PersonneID);";
+    mysqli_query($db,$sql);
+
+    $sql="select ID from Accident where DateAcc = $date_accident_second and LieuAcc = '$lieu_accident' and isCauseTiers = '$detail_accident';";
+    $AccidentID = mysqli_query($db,$sql);
+
+    $sql="insert into AccidentCircu(isTestAlcool, isTauxAlcool, isDepiStup, isPositifStup, isRapportPolice, RefRapport, AccidentID) VALUES ('$test_alcool',$taux_alcool,'$test_stupefiant','$resultat_stupefiant', '$rapport_police', '$rapport_references', $AccidentID);";
+    mysqli_query($db,$sql);
+
+
+    $sql="select MAX(ID) from Prestation where PersonneID = $PersonneID;";
+    $PrestationID = mysqli_query($db,$sql);
+
+    add_block($url,$PrestationID,"new","prestation incapacité");
 }
 ?>

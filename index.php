@@ -13,6 +13,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <link rel="icon" href="img/Axa.png">
 </head>
   <body>
     <div class="container">
@@ -26,6 +27,7 @@
     <div id="page-content-wrapper">
       <div class="container">
         <?php 
+        include('php/blockchain.php');
         include('php/new.php');
         ?>
         <br>
